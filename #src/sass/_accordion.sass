@@ -1,0 +1,53 @@
+.accordion
+  position: relative
+  max-width: 50em
+  margin: 0 auto
+  border-radius: 0.75em
+  background: $box-bg
+  font-size: 1.2em
+  color: $text-color
+  box-shadow: $box-shadow
+  padding: 1.8em
+  .contentBox
+    .accordion-body
+      max-height: 7em
+      max-width: 42em
+      padding: 0 1.6em
+      overflow-y: scroll
+      transition: max-height 0.8s ease-out
+    .accordion-button
+      width: 100%
+      display: inline-block
+      border-radius: 0.5em
+      border: 1px solid grey
+      margin: .5em 0
+      padding: 0.7em
+      cursor: pointer
+      text-align: left
+      font-size: 0.8em
+      background: inherit
+      color: $active_color
+      transition: all 0.5s linear
+      .ico
+        float: right
+        transform: rotate(-180deg) 
+        transition: all 0.8s ease-out
+        .arrow
+          fill: $active_color
+          width: 23px
+          height: 13px
+      &:hover,
+      &:focus
+        background: $box-bg-hover
+        transition: all 0.5s linear
+
+
+.accordion .contentBox.active .accordion-body 
+  max-height: 0
+  overflow: hidden
+  transition: max-height 0.8s ease-out
+
+.accordion .contentBox.active .accordion-button.arrow-up
+  .ico
+    transform: rotate(0deg) 
+    transition: all 0.8s ease-out
